@@ -1,0 +1,309 @@
+/* ======================
+   APPLE STYLE BASE
+====================== */
+:root {
+    --apple-black: #1d1d1f;
+    --apple-gray: #6e6e73;
+    --apple-light-gray: #f5f5f7;
+    --apple-green: #2e7d32;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: var(--apple-light-gray);
+    color: var(--apple-black);
+}
+
+/* ======================
+   HEADER
+====================== */
+.header {
+    background: #8bc34a;
+    padding: 16px 0;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 02px; /* sát chữ hơn */
+    font-size: 22px; /* chữ to */
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.4px;
+}
+
+.logo img {
+    height: 45px; /* LOGO TO BẰNG CHỮ */
+    width: 50px;
+    display: block;
+}
+
+.logo span {
+    line-height: 1;
+}
+
+
+.menu a {
+    margin: 0 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.menu a:hover {
+    opacity: 1;
+}
+
+.cart {
+    font-size: 40px;
+    color: white;
+}
+
+/* ======================
+   BANNER
+====================== */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 70%;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 10px 24px;
+    font-size: 15px;
+    border-radius: 999px;
+}
+
+/* ======================
+   PRODUCT SECTION
+====================== */
+.products {
+    width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.view-all {
+    font-size: 14px;
+    color: var(--apple-gray);
+    margin-bottom: 48px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+/* ======================
+   PRODUCT CARD (APPLE STYLE)
+====================== */
+.product-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--apple-black);
+    margin: 16px 0 8px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product-card h3:hover {
+    color: var(--apple-green);
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--apple-green);
+}
+
+/* ======================
+   HOVER EFFECT (APPLE)
+====================== */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ======================
+   BADGE
+====================== */
+.badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(46, 125, 50, 0.9);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 500;
+}
+/* ======================
+   MENU RANDOM HOVER EFFECT
+====================== */
+
+.menu a {
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+/* 1️⃣ Item 1 – Nổi lên */
+.menu a:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.35s ease;
+}
+
+.menu a:nth-child(1):hover::after {
+    width: 100%;
+}
+
+/* 2️⃣ Item 2 – Gạch chân mượt */
+.menu a:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.35s ease;
+}
+
+.menu a:nth-child(2):hover::after {
+    width: 100%;
+}
+
+/* 3️⃣ Item 3 – Zoom nhẹ */
+.menu a:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.35s ease;
+}
+
+.menu a:nth-child(3):hover::after {
+    width: 100%;
+}
+/* 4️⃣ Item 4 – Đổi màu + glow */
+.menu a:nth-child(4)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.35s ease;
+}
+
+.menu a:nth-child(4):hover::after {
+    width: 100%;
+}
+
+/* 5️⃣ Item 5 – Trượt sang phải */
+.menu a:nth-child(5)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.35s ease;
+}
+
+.menu a:nth-child(5):hover::after {
+    width: 100%;
+}
+
+/* 6️⃣ Item 6 – Fade */
+.menu a:nth-child(6)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.35s ease;
+}
+
+.menu a:nth-child(6):hover::after {
+    width: 100%;
+}
+/* 6️⃣ Item 7 – Fade */
+.menu a:nth-child(7)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.35s ease;
+}
+
+.menu a:nth-child(7):hover::after {
+    width: 100%;
+}
