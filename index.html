@@ -1,160 +1,782 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>YUGEN Matcha</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<script src="cart.js"></script>
+/* ======================
+   APPLE STYLE BASE
+====================== */
+:root {
+    --apple-black: #1d1d1f;
+    --apple-gray: #6e6e73;
+    --apple-light-gray: #f5f5f7;
+    --apple-green: #2e7d32;
+}
 
-<!-- ADD TO CART POPUP -->
-<div class="add-cart-popup" id="addCartPopup">
-    <div class="popup-box">
-        <span class="check">✔</span>
-        <p>Đã thêm sản phẩm vào giỏ hàng</p>
-    </div>
-</div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-</body>
-</html>
+body {
+    background: var(--apple-light-gray);
+    color: var(--apple-black);
+}
 
-<body>
+/* ======================
+   CONTAINER
+====================== */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 16px;
+    margin: auto;
+}
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container header-content">
-        <div class="logo">
-    <img src="./LOGO.png" alt="YUGEN Matcha Logo" width="100px">
-    <span>YUGEN Matcha</span>
-</div>
+/* ======================
+   HEADER
+====================== */
+.header {
+    background: #8bc34a;
+    padding: 16px 0;
 
-        <nav class="menu">
-            <a href="#">Trang chủ</a>
-            <a href="#">Chứng nhận</a>
-            <a href="#">Matcha</a>
-            <a href="#">Trà Nhật Bản</a>
-            <a href="#">Dụng cụ pha Matcha</a>
-            <a href="#">Blog</a>
-            <a href="#">Khuyến mãi</a>
-        </nav>
-      <a href="cart.html" class="cart">
-    <i class='bx bx-shopping-bag'></i>
-    <span class="cart-count">0</span>
-</a>
-
-
-</header>
-
-<!-- BANNER -->
-<section class="banner">
-    <img src="./BACKGROUND.jpg" alt="Banner Matcha">
-</section>
-
-<!-- PRODUCT SECTION -->
-<section class="products">
-    <h2> BỘT MATCHA NHẬT BẢN</h2>
-    <p class="view-all">XEM TẤT CẢ SẢN PHẨM</p>
-
-    <div class="product-grid">
-
-        <!-- Product Item -->
-       <!-- Product 1 -->
-<div class="product-card">
-    <img src="./Ceremonial.png" alt="Bột trà xanh Ceremonial 20g">
-    <h3>Bột trà xanh Ceremonial 20g</h3>
-    <p class="price">74,520 đ</p>
-
-    <button class="add-to-cart"
-        data-name="Bột trà xanh Ceremonial 20g"
-        data-price="74520">
-        Thêm vào giỏ
-    </button>
-
-    <span class="badge">Mua nhiều nhất</span>
-</div>
-
-<!-- Product 2 -->
-<div class="product-card">
-    <img src="./Culinary.png" alt="Bột trà xanh Culinary 20g">
-    <h3>Bột trà xanh Culinary 20g</h3>
-    <p class="price">120,720 đ</p>
-
-    <button class="add-to-cart"
-        data-name="Bột trà xanh Culinary 20g"
-        data-price="120720">
-        Thêm vào giỏ
-    </button>
-
-    <span class="badge">Mua nhiều nhất</span>
-</div>
-
-<!-- Product 3 -->
-<div class="product-card">
-    <img src="./Premium Latte.png" alt="Bột trà xanh Premium Latte 50g">
-    <h3>Bột trà xanh Premium Latte 50g</h3>
-    <p class="price">150,720 đ</p>
-
-    <button class="add-to-cart"
-        data-name="Bột trà xanh Premium Latte 50g"
-        data-price="150720">
-        Thêm vào giỏ
-    </button>
-
-    <span class="badge">Mua nhiều nhất</span>
-</div>
-
-<!-- Product 4 -->
-<div class="product-card">
-    <img src="./Ceremonial.png" alt="Bột trà xanh Ceremonial 50g">
-    <h3>Bột trà xanh Ceremonial 50g</h3>
-    <p class="price">120,120 đ</p>
-
-    <button class="add-to-cart"
-        data-name="Bột trà xanh Ceremonial 50g"
-        data-price="120120">
-        Thêm vào giỏ
-    </button>
-
-    <span class="badge">Mua nhiều nhất</span>
-</div>
-
-<!-- Product 5 -->
-<div class="product-card">
-    <img src="./Culinary.png" alt="Bột trà xanh Culinary 100g">
-    <h3>Bột trà xanh Culinary 100g</h3>
-    <p class="price">240,920 đ</p>
-
-    <button class="add-to-cart"
-        data-name="Bột trà xanh Culinary 100g"
-        data-price="240920">
-        Thêm vào giỏ
-    </button>
-
-    <span class="badge">Mua nhiều nhất</span>
-</div>
-
-<!-- Product 6 -->
-<div class="product-card">
-    <img src="./Premium Latte.png" alt="Bột trà xanh Premium Latte 1kg">
-    <h3>Bột trà xanh Premium Latte 1kg</h3>
-    <p class="price">1,674,000 đ</p>
-
-    <button class="add-to-cart"
-        data-name="Bột trà xanh Premium Latte 1kg"
-        data-price="1674000">
-        Thêm vào giỏ
-    </button>
-
-    <span class="badge">Mua nhiều nhất</span>
-</div>
-
-    </div>
-</section>
-
-</body>
-</html>
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
 
 
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+/* ======================
+   LOGO
+====================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.4px;
+}
 
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.logo span {
+    line-height: 1;
+}
+
+/* ======================
+   MENU
+====================== */
+.menu a {
+    margin: 0 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.9;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    opacity: 1;
+}
+
+/* Apple-style underline hover */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ======================
+   CART
+====================== */
+.cart {
+    font-size: 36px;
+    color: #fff;
+}
+
+/* ======================
+   BANNER
+====================== */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 10px 24px;
+    font-size: 15px;
+    border-radius: 999px;
+}
+
+/* ======================
+   PRODUCTS SECTION
+====================== */
+.products {
+    max-width: 1200px;
+    width: 100%;
+    margin: 60px auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.view-all {
+    font-size: 14px;
+    color: var(--apple-gray);
+    margin-bottom: 48px;
+}
+
+/* ======================
+   PRODUCT GRID
+====================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+/* ======================
+   PRODUCT CARD
+====================== */
+.product-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 16px 0 8px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product-card h3:hover {
+    color: var(--apple-green);
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--apple-green);
+}
+
+/* Hover effect */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ======================
+   BADGE
+====================== */
+.badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(46, 125, 50, 0.9);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+/* ======================
+   RESPONSIVE MOBILE
+====================== */
+@media (max-width: 768px) {
+
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 13px;
+        margin: 6px 8px;
+    }
+
+    .banner-text {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .products h2 {
+        font-size: 24px;
+    }
+}
+
+.cart {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Vòng tròn mờ */
+.cart::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35); /* màu mờ */
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+/* Hover */
+.cart:hover::before {
+    opacity: 1;
+    transform: scale(1.4);
+}
+
+/* Icon */
+.cart i {
+    font-size: 30px;
+    color: #fff; /* đổi theo theme */
+    transition: transform 0.2s ease;
+}
+
+.cart:hover i {
+    transform: scale(1.1);
+}
+
+/* ======================
+   ADD TO CART BUTTON
+====================== */
+.add-to-cart {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px 0;
+    border-radius: 999px;
+    border: 1px solid var(--apple-green);
+    background: #fff;
+    color: var(--apple-green);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover button */
+.add-to-cart:hover {
+    background: var(--apple-green);
+    color: #fff;
+}
+
+/* Hover card -> button nổi hơn */
+.product-card:hover .add-to-cart {
+    transform: translateY(-2px);
+}
+
+.cart-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* ===== MINI CART ===== */
+.cart {
+    position: relative;
+    text-decoration: none;
+}
+
+.mini-cart {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 260px;
+    background: #fff;
+    color: #000;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.cart:hover .mini-cart {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.mini-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mini-items p {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.mini-total {
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.mini-view {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #2e7d32;
+}
+
+/* ======================
+   PAYMENT SUCCESS POPUP
+====================== */
+.payment-success {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 99999;
+}
+
+.payment-success.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.success-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 360px;
+    text-align: center;
+
+    transform: scale(0.8);
+    animation: popUp 0.35s ease forwards;
+}
+
+@keyframes popUp {
+    to {
+        transform: scale(1);
+    }
+}
+
+.success-icon {
+    font-size: 48px;
+    color: #2e7d32;
+    margin-bottom: 16px;
+}
+
+.success-box h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.success-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.success-box button {
+    background: #2e7d32;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.success-box button:hover {
+    opacity: 0.9;
+}
+
+/* POPUP ADD TO CART */
+.add-cart-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.add-cart-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: pop 0.3s ease;
+}
+
+.popup-box .check {
+    font-size: 36px;
+    color: #2e7d32;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.popup-box p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.matcha-ritual {
+    background: #0f3b2e;
+    color: #f5f5f5;
+    padding: 100px 8%;
+}
+
+.ritual-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.ritual-sub {
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #cbd5c0;
+}
+
+.ritual-header h2 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.ritual-desc {
+    font-size: 14px;
+    color: #cbd5c0;
+}
+
+.ritual-row {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.ritual-row img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.ritual-text {
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding-left: 40px;
+}
+
+.step-number {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #cbd5c0;
+}
+
+.ritual-text h3 {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.ritual-text p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #d7e2d1;
+}
+
+/* =========================
+   MATCHA TOOLS CTA SECTION
+========================= */
+
+.tools-cta-section {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1920 / 814; /* GIỮ ĐÚNG TỈ LỆ ẢNH */
+    background: url("./tools-banner.jpg") center center / contain no-repeat;
+    background-color: #0f3b2e; /* nền fallback */
+
+    display: flex;
+    align-items: center;
+}
+
+/* Overlay làm chữ nổi */
+.tools-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(15, 59, 46, 0.85),
+        rgba(15, 59, 46, 0.55),
+        rgba(15, 59, 46, 0.2)
+    );
+}
+
+/* Container căn trái */
+.tools-cta-container {
+    position: relative;
+    width: 100%;
+    padding-left: 10%;
+}
+
+/* Nội dung CTA */
+.tools-cta-content {
+    max-width: 560px;
+    color: #f4f6f3;
+}
+
+/* Subtitle */
+.tools-cta-sub {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #cfe0d2;
+    margin-bottom: 18px;
+}
+
+/* Heading */
+.tools-cta-content h2 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 22px;
+}
+
+/* Description */
+.tools-cta-desc {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #e1ebe3;
+    margin-bottom: 36px;
+}
+
+/* CTA Button */
+.tools-cta-btn {
+    display: inline-block;
+    padding: 15px 42px;
+    border: 1px solid #e1ebe3;
+    color: #e1ebe3;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.tools-cta-btn:hover {
+    background: #e1ebe3;
+    color: #0f3b2e;
+}
+
+/* =========================
+        FOOTER PREMIUM
+========================= */
+
+.site-footer {
+    background: #0f3b2e;
+    color: #e4eee8;
+    padding: 90px 10% 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+/* BRAND */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.footer-logo img {
+    width: 46px;
+}
+
+.footer-logo span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.footer-desc {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #d2e0d7;
+    margin-bottom: 26px;
+}
+
+/* SOCIAL */
+.footer-social a {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #e3ede0;
+    color: #0f3b2e;
+    transform: translateY(-2px);
+}
+
+/* COLUMNS */
+.footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 14px;
+}
+
+.footer-col ul li a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #d2e0d7;
+    transition: all 0.25s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 4px;
+}
+
+/* CONTACT */
+.footer-contact li {
+    font-size: 15px;
+    color: #d2e0d7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    text-align: center;
+    font-size: 14px;
+    color: #b9cfc3;
+}
