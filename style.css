@@ -22,17 +22,27 @@ body {
 }
 
 /* ======================
+   CONTAINER
+====================== */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 16px;
+    margin: auto;
+}
+
+/* ======================
    HEADER
 ====================== */
 .header {
     background: #8bc34a;
     padding: 16px 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 
-.container {
-    width: 1200px;
-    margin: auto;
-}
 
 .header-content {
     display: flex;
@@ -40,19 +50,22 @@ body {
     justify-content: space-between;
 }
 
+/* ======================
+   LOGO
+====================== */
 .logo {
     display: flex;
     align-items: center;
-    gap: 02px; /* sát chữ hơn */
-    font-size: 22px; /* chữ to */
+    gap: 2px;
+    font-size: 22px;
     font-weight: 600;
     color: #fff;
     letter-spacing: -0.4px;
 }
 
 .logo img {
-    height: 45px; /* LOGO TO BẰNG CHỮ */
-    width: 50px;
+    height: 45px;
+    width: auto;
     display: block;
 }
 
@@ -60,23 +73,46 @@ body {
     line-height: 1;
 }
 
-
+/* ======================
+   MENU
+====================== */
 .menu a {
     margin: 0 12px;
     text-decoration: none;
     font-size: 18px;
     color: #fff;
     opacity: 0.9;
-    transition: opacity 0.3s ease;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .menu a:hover {
     opacity: 1;
 }
 
+/* Apple-style underline hover */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ======================
+   CART
+====================== */
 .cart {
-    font-size: 40px;
-    color: white;
+    font-size: 36px;
+    color: #fff;
 }
 
 /* ======================
@@ -88,8 +124,9 @@ body {
 
 .banner img {
     width: 100%;
-    height: 70%;
+    height: auto;
     display: block;
+    object-fit: cover;
 }
 
 .banner-text {
@@ -105,11 +142,13 @@ body {
 }
 
 /* ======================
-   PRODUCT SECTION
+   PRODUCTS SECTION
 ====================== */
 .products {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     margin: 60px auto;
+    padding: 0 16px;
     text-align: center;
 }
 
@@ -126,6 +165,9 @@ body {
     margin-bottom: 48px;
 }
 
+/* ======================
+   PRODUCT GRID
+====================== */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -133,7 +175,7 @@ body {
 }
 
 /* ======================
-   PRODUCT CARD (APPLE STYLE)
+   PRODUCT CARD
 ====================== */
 .product-card {
     background: #fff;
@@ -151,7 +193,6 @@ body {
 .product-card h3 {
     font-size: 16px;
     font-weight: 500;
-    color: var(--apple-black);
     margin: 16px 0 8px;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -167,9 +208,7 @@ body {
     color: var(--apple-green);
 }
 
-/* ======================
-   HOVER EFFECT (APPLE)
-====================== */
+/* Hover effect */
 .product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
@@ -189,121 +228,300 @@ body {
     border-radius: 999px;
     font-weight: 500;
 }
+
 /* ======================
-   MENU RANDOM HOVER EFFECT
+   RESPONSIVE MOBILE
 ====================== */
+@media (max-width: 768px) {
 
-.menu a {
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 13px;
+        margin: 6px 8px;
+    }
+
+    .banner-text {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .products h2 {
+        font-size: 24px;
+    }
+}
+
+.cart {
     position: relative;
-    transition: all 0.35s ease;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-/* 1️⃣ Item 1 – Nổi lên */
-.menu a:nth-child(1)::after {
+/* Vòng tròn mờ */
+.cart::before {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.35s ease;
-}
-
-.menu a:nth-child(1):hover::after {
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35); /* màu mờ */
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.3s ease;
+    z-index: -1;
 }
 
-/* 2️⃣ Item 2 – Gạch chân mượt */
-.menu a:nth-child(2)::after {
-    content: "";
+/* Hover */
+.cart:hover::before {
+    opacity: 1;
+    transform: scale(1.4);
+}
+
+/* Icon */
+.cart i {
+    font-size: 30px;
+    color: #fff; /* đổi theo theme */
+    transition: transform 0.2s ease;
+}
+
+.cart:hover i {
+    transform: scale(1.1);
+}
+
+/* ======================
+   ADD TO CART BUTTON
+====================== */
+.add-to-cart {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px 0;
+    border-radius: 999px;
+    border: 1px solid var(--apple-green);
+    background: #fff;
+    color: var(--apple-green);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover button */
+.add-to-cart:hover {
+    background: var(--apple-green);
+    color: #fff;
+}
+
+/* Hover card -> button nổi hơn */
+.product-card:hover .add-to-cart {
+    transform: translateY(-2px);
+}
+
+.cart-count {
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.35s ease;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
 }
 
-.menu a:nth-child(2):hover::after {
-    width: 100%;
+/* ===== MINI CART ===== */
+.cart {
+    position: relative;
+    text-decoration: none;
 }
 
-/* 3️⃣ Item 3 – Zoom nhẹ */
-.menu a:nth-child(3)::after {
-    content: "";
+.mini-cart {
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
+    top: 70px;
+    right: 0;
+    width: 260px;
     background: #fff;
-    transition: width 0.35s ease;
+    color: #000;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 999;
 }
 
-.menu a:nth-child(3):hover::after {
-    width: 100%;
+.cart:hover .mini-cart {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
-/* 4️⃣ Item 4 – Đổi màu + glow */
-.menu a:nth-child(4)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
+
+.mini-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mini-items p {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.mini-total {
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.mini-view {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #2e7d32;
+}
+
+/* ======================
+   PAYMENT SUCCESS POPUP
+====================== */
+.payment-success {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 99999;
+}
+
+.payment-success.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.success-box {
     background: #fff;
-    transition: width 0.35s ease;
+    border-radius: 20px;
+    padding: 40px;
+    width: 360px;
+    text-align: center;
+
+    transform: scale(0.8);
+    animation: popUp 0.35s ease forwards;
 }
 
-.menu a:nth-child(4):hover::after {
-    width: 100%;
+@keyframes popUp {
+    to {
+        transform: scale(1);
+    }
 }
 
-/* 5️⃣ Item 5 – Trượt sang phải */
-.menu a:nth-child(5)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
+.success-icon {
+    font-size: 48px;
+    color: #2e7d32;
+    margin-bottom: 16px;
+}
+
+.success-box h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.success-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.success-box button {
+    background: #2e7d32;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.success-box button:hover {
+    opacity: 0.9;
+}
+
+/* POPUP ADD TO CART */
+.add-cart-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.add-cart-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-box {
     background: #fff;
-    transition: width 0.35s ease;
+    padding: 24px 32px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: pop 0.3s ease;
 }
 
-.menu a:nth-child(5):hover::after {
-    width: 100%;
+.popup-box .check {
+    font-size: 36px;
+    color: #2e7d32;
+    display: block;
+    margin-bottom: 10px;
 }
 
-/* 6️⃣ Item 6 – Fade */
-.menu a:nth-child(6)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.35s ease;
+.popup-box p {
+    font-size: 16px;
+    font-weight: 500;
 }
 
-.menu a:nth-child(6):hover::after {
-    width: 100%;
-}
-/* 6️⃣ Item 7 – Fade */
-.menu a:nth-child(7)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.35s ease;
-}
-
-.menu a:nth-child(7):hover::after {
-    width: 100%;
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
