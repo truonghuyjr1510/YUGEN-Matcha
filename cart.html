@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng | YUGEN Matcha</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<!-- PAYMENT SUCCESS POPUP -->
+<div class="payment-success" id="paymentSuccess">
+    <div class="success-box">
+        <div class="success-icon">✔</div>
+        <h2>Thanh toán thành công</h2>
+        <p>Cảm ơn bạn đã mua hàng tại YUGEN Matcha</p>
+        <button onclick="goHome()">Về trang chủ</button>
+    </div>
+</div>
+
+<div class="cart-container">
+    <h1>🛒 Giỏ hàng của bạn</h1>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+        <p>Tổng tiền:</p>
+        <h2 id="cart-total">0 đ</h2>
+    </div>
+
+    <div class="cart-actions">
+        <a href="index.html">← Tiếp tục mua hàng</a>
+        <button class="checkout-btn">Thanh toán</button>
+    </div>
+</div>
+
+
+<script src="cart-page.js"></script>
+<script src="cart-checkout.js"></script>
+</body>
+</html>
