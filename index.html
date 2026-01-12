@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<script src="cart.js"></script>
+
+<!-- ADD TO CART POPUP -->
+<div class="add-cart-popup" id="addCartPopup">
+    <div class="popup-box">
+        <span class="check">✔</span>
+        <p>Đã thêm sản phẩm vào giỏ hàng</p>
+    </div>
+</div>
+
+</body>
+</html>
+
 <body>
 
 <!-- HEADER -->
@@ -21,12 +34,16 @@
             <a href="#">Chứng nhận</a>
             <a href="#">Matcha</a>
             <a href="#">Trà Nhật Bản</a>
-            <a href="#">Dụng cụ pha trà</a>
+            <a href="#">Dụng cụ pha Matcha</a>
             <a href="#">Blog</a>
             <a href="#">Khuyến mãi</a>
         </nav>
-        <div class="cart"><i class='bx bx-shopping-bag'></i></div>
-    </div>
+      <a href="cart.html" class="cart">
+    <i class='bx bx-shopping-bag'></i>
+    <span class="cart-count">0</span>
+</a>
+
+
 </header>
 
 <!-- BANNER -->
@@ -36,56 +53,106 @@
 
 <!-- PRODUCT SECTION -->
 <section class="products">
-    <h2> BỘT MATCHA VÀ DỤNG CỤ PHA MATCHA</h2>
+    <h2> BỘT MATCHA NHẬT BẢN</h2>
     <p class="view-all">XEM TẤT CẢ SẢN PHẨM</p>
 
     <div class="product-grid">
 
         <!-- Product Item -->
-        <div class="product-card">
-            <img src="./Ceremonial.png" alt="">
-            <h3>Bột trà xanh Ceremonial 20g</h3>
-            <p class="price">74,520 đ</p>
-            <span class="badge">Mua nhiều nhất</span>
-        </div>
+       <!-- Product 1 -->
+<div class="product-card">
+    <img src="./Ceremonial.png" alt="Bột trà xanh Ceremonial 20g">
+    <h3>Bột trà xanh Ceremonial 20g</h3>
+    <p class="price">74,520 đ</p>
 
-        <div class="product-card">
-            <img src="./Culinary.png" alt="">
-            <h3>Bột trà xanh Culinary 20g</h3>
-            <p class="price">120,720 đ</p>
-            <span class="badge">Mua nhiều nhất</span>
-        </div>
+    <button class="add-to-cart"
+        data-name="Bột trà xanh Ceremonial 20g"
+        data-price="74520">
+        Thêm vào giỏ
+    </button>
 
-        <div class="product-card">
-            <img src="./Premium Latte.png" alt="">
-            <h3>Bột trà xanh Premium Latte 50g</h3>
-            <p class="price">150,720 đ</p>
-            <span class="badge">Mua nhiều nhất</span>
-        </div>
+    <span class="badge">Mua nhiều nhất</span>
+</div>
 
-        <div class="product-card">
-            <img src="./Ceremonial.png" alt="">
-            <h3>Bột trà xanh Ceremonial 50g</h3>
-            <p class="price">120,120 đ</p>
-            <span class="badge">Mua nhiều nhất</span>
-        </div>
+<!-- Product 2 -->
+<div class="product-card">
+    <img src="./Culinary.png" alt="Bột trà xanh Culinary 20g">
+    <h3>Bột trà xanh Culinary 20g</h3>
+    <p class="price">120,720 đ</p>
 
-        <div class="product-card">
-        <img src="./Culinary.png" alt="">           
-        <h3>Bột trà xanh Culinary 100g</h3>
-            <p class="price">240,920 đ</p>
-            <span class="badge">Mua nhiều nhất</span>
-        </div>
+    <button class="add-to-cart"
+        data-name="Bột trà xanh Culinary 20g"
+        data-price="120720">
+        Thêm vào giỏ
+    </button>
 
-        <div class="product-card">
-            <img src="./Premium Latte.png" alt="">
-            <h3>Bột trà xanh Premium Latte 1kg</h3>
-            <p class="price">1,674,000 đ</p>
-            <span class="badge">Mua nhiều nhất</span>
-        </div>
+    <span class="badge">Mua nhiều nhất</span>
+</div>
+
+<!-- Product 3 -->
+<div class="product-card">
+    <img src="./Premium Latte.png" alt="Bột trà xanh Premium Latte 50g">
+    <h3>Bột trà xanh Premium Latte 50g</h3>
+    <p class="price">150,720 đ</p>
+
+    <button class="add-to-cart"
+        data-name="Bột trà xanh Premium Latte 50g"
+        data-price="150720">
+        Thêm vào giỏ
+    </button>
+
+    <span class="badge">Mua nhiều nhất</span>
+</div>
+
+<!-- Product 4 -->
+<div class="product-card">
+    <img src="./Ceremonial.png" alt="Bột trà xanh Ceremonial 50g">
+    <h3>Bột trà xanh Ceremonial 50g</h3>
+    <p class="price">120,120 đ</p>
+
+    <button class="add-to-cart"
+        data-name="Bột trà xanh Ceremonial 50g"
+        data-price="120120">
+        Thêm vào giỏ
+    </button>
+
+    <span class="badge">Mua nhiều nhất</span>
+</div>
+
+<!-- Product 5 -->
+<div class="product-card">
+    <img src="./Culinary.png" alt="Bột trà xanh Culinary 100g">
+    <h3>Bột trà xanh Culinary 100g</h3>
+    <p class="price">240,920 đ</p>
+
+    <button class="add-to-cart"
+        data-name="Bột trà xanh Culinary 100g"
+        data-price="240920">
+        Thêm vào giỏ
+    </button>
+
+    <span class="badge">Mua nhiều nhất</span>
+</div>
+
+<!-- Product 6 -->
+<div class="product-card">
+    <img src="./Premium Latte.png" alt="Bột trà xanh Premium Latte 1kg">
+    <h3>Bột trà xanh Premium Latte 1kg</h3>
+    <p class="price">1,674,000 đ</p>
+
+    <button class="add-to-cart"
+        data-name="Bột trà xanh Premium Latte 1kg"
+        data-price="1674000">
+        Thêm vào giỏ
+    </button>
+
+    <span class="badge">Mua nhiều nhất</span>
+</div>
 
     </div>
 </section>
 
 </body>
 </html>
+
+<a href="cart.html">Giỏ hàng</a>
