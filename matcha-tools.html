@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dụng cụ pha Matcha | YUGEN Matcha</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="cart.html" class="cart">
+    <i class='bx bx-shopping-bag'></i>
+    <span class="cart-count">0</span>
+</a>
+
+</head>
+<script src="cart.js"></script>
+<!-- POPUP ADD TO CART -->
+<div class="cart-popup-overlay" id="cartPopup">
+    <div class="cart-popup">
+        <button class="popup-close" onclick="closeCartPopup()">×</button>
+
+        <div class="popup-icon">✔</div>
+        <h3>Đã thêm vào giỏ hàng</h3>
+        <p>Sản phẩm đã được thêm thành công.</p>
+
+        <div class="popup-actions">
+            <a href="cart.html" class="btn primary">Xem giỏ hàng</a>
+            <a href="index.html" class="btn outline">Quay lại trang chủ</a>
+        </div>
+    </div>
+</div>
+
+<body>
+
+<!-- ======================
+     BANNER / HERO
+====================== -->
+<section class="tools-hero" style="background-image:url('images/tools/banner-tools.jpg')">
+    <div class="tools-hero-overlay"></div>
+    <div class="tools-hero-content">
+        <span class="tag">MATCHA TOOLS</span>
+        <h1>Dụng cụ pha Matcha chuẩn Nhật</h1>
+        <p>
+            Từ chasen tre thủ công, chawan gốm truyền thống
+            đến muỗng chashaku – từng chi tiết đều góp phần
+            tạo nên một chén matcha trọn vẹn.
+        </p>
+    </div>
+</section>
+
+<<!-- ======================
+     PRODUCT SECTION
+====================== -->
+<section class="products">
+    <h2>Dụng cụ pha Matcha</h2>
+    <p class="view-all">Tinh tuyển – Thủ công – Chuẩn trà đạo Nhật Bản</p>
+
+    <div class="product-grid">
+
+        <!-- Muỗng -->
+        <div class="product-card">
+            <img src="./muongmucmatcha.webp" alt="Muỗng Matcha">
+            <h3>Muỗng múc Matcha (Chashaku)</h3>
+            <p class="price">80,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Muỗng múc Matcha (Chashaku)"
+                data-price="180000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <!-- Chasen -->
+        <div class="product-card">
+            <span class="badge">Bán chạy</span>
+            <img src="./chasen.webp" alt="Chasen Matcha">
+            <h3>Chasen tre Nhật Bản truyền thống</h3>
+            <p class="price">220,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Chasen tre Nhật Bản truyền thống"
+                data-price="420000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="./Gacchasenxanhcam.webp" alt="Gác Chasen xanh cẩm">
+            <h3>Gác Chasen – Xanh cẩm</h3>
+            <p class="price">190,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Gác Chasen – Xanh cẩm"
+                data-price="220000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="./Gacchasentrang.webp" alt="Gác Chasen trắng">
+            <h3>Gác Chasen – Trắng</h3>
+            <p class="price">180,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Gác Chasen – Trắng"
+                data-price="220000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="./Gacchasendenhoatiet.webp" alt="Gác Chasen đen họa tiết">
+            <h3>Gác Chasen – Đen họa tiết</h3>
+            <p class="price">250,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Gác Chasen – Đen họa tiết"
+                data-price="250000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <!-- Bát -->
+        <div class="product-card">
+            <img src="./Batxanhcam.webp" alt="Bát xanh cẩm">
+            <h3>Bát pha Matcha – Xanh cẩm</h3>
+            <p class="price">300,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Bát pha Matcha – Xanh cẩm"
+                data-price="690000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="./Battrang.webp" alt="Bát trắng">
+            <h3>Bát pha Matcha – Trắng</h3>
+            <p class="price">240,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Bát pha Matcha – Trắng"
+                data-price="650000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="./Batxdenhoatiet.webp" alt="Bát đen họa tiết">
+            <h3>Bát pha Matcha – Đen họa tiết</h3>
+            <p class="price">320,000 đ</p>
+            <button class="add-to-cart"
+                data-name="Bát pha Matcha – Đen họa tiết"
+                data-price="720000">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+</html>
+<script>
+    const popup = document.getElementById("cartPopup");
+
+    function openCartPopup() {
+        popup.classList.add("active");
+    }
+
+    function closeCartPopup() {
+        popup.classList.remove("active");
+    }
+
+    // Bắt sự kiện thêm vào giỏ
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+            const name = button.dataset.name;
+            const price = button.dataset.price;
+
+            // Hàm này đã có trong cart.js
+            addToCart(name, price);
+
+            // Hiện popup
+            openCartPopup();
+        });
+    });
+</script>
